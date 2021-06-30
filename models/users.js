@@ -17,4 +17,4 @@ const userSchema = mongoose.Schema({
         require:true
     }
 })
-export const User = mongoose.model("recipe",userSchema);
+export const Recipe = mongoose.model("Recipe",userSchema);
