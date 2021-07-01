@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import {Recipe} from './models/users.js';
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 //Data base url
-//const url ="mongodb+srv://armaan:guvi123456@cluster0.qx8hr.mongodb.net/recipeApp?retryWrites=true&w=majority";
-const url ="mongodb://localhost/recipeApp";
+const url ="mongodb+srv://armaan:guvi123456@cluster0.qx8hr.mongodb.net/recipeApp?retryWrites=true&w=majority";
+//const url ="mongodb://localhost/recipeApp";
 mongoose.connect(url,{useNewUrlParser:true});
 //opening connection
 const con = mongoose.connection;
