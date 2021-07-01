@@ -6,8 +6,8 @@ import {Recipe} from './models/users.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 //Data base url
-const url ="mongodb+srv://armaan:guvi123456@cluster0.qx8hr.mongodb.net/recipeApp?retryWrites=true&w=majority";
-//const url ="mongodb://localhost/recipeApp";
+const url = process.env.MONGODB_URI || "mongodb://localhost/RecipeData";
+
 mongoose.connect(url,{useNewUrlParser:true});
 //opening connection
 const con = mongoose.connection;
