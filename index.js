@@ -8,7 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 //Data base url
 const url = process.env.MONGODB_URI || "mongodb://localhost/RecipeData";
+<<<<<<< HEAD
 //const url =  "mongodb://localhost/recipeApp";
+=======
+// const url =  "mongodb://localhost/recipeApp";
+>>>>>>> f539f2cf14e7c82eb1719fa216b61f6922308b3f
 // const url = process.env.MONGODB_URI ;
 
 mongoose.connect(url,{useNewUrlParser:true});
@@ -36,17 +40,9 @@ app.get('/',(request,response)=>{
     response.send('Welcome to postman');
 })
 app.get('/recipes',async(request,response)=>{
-    const q = request.query;
-    // q = new RegExp(`/^${q}/`, 'gi');
     try{
-        // if(q){
-        //     const users = await Recipe.find({"recipe_name":{$regex:`/^*${q.recipe_name}/`,$options:'i'}});
-        //     response.send(users);
-        // }else{
-            const users = await Recipe.find();
-            response.send(users);
-        // }
-        // console.log(request.query);
+         const users = await Recipe.find();
+         response.send(users);
     }catch(e){
         response.send(e);
     }  
