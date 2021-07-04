@@ -7,8 +7,8 @@ import bcrypt from "bcrypt";
 const app = express();
 const PORT = process.env.PORT || 5000;
 //Data base url
-// const url = process.env.MONGODB_URI || "mongodb://localhost/RecipeData";
-const url =  "mongodb://localhost/recipeApp";
+const url = process.env.MONGODB_URI || "mongodb://localhost/RecipeData";
+//const url =  "mongodb://localhost/recipeApp";
 // const url = process.env.MONGODB_URI ;
 
 mongoose.connect(url,{useNewUrlParser:true});
@@ -18,7 +18,7 @@ con.on('open',()=>console.log('MongoDB is connected'));
 //Creating middleware
 app.use(express.json());
 //implementing cors
-var allowedOrigins = ['http://localhost:3000'];
+var allowedOrigins = ['https://recipe-app-front-end.netlify.app/'];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
