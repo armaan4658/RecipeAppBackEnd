@@ -18,7 +18,7 @@ con.on('open',()=>console.log('MongoDB is connected'));
 //Creating middleware
 app.use(express.json());
 //implementing cors
-var allowedOrigins = ['http://localhost:3000'];
+var allowedOrigins = ['https://romantic-ride-725611.netlify.app/'];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
