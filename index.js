@@ -18,20 +18,7 @@ con.on('open',()=>console.log('MongoDB is connected'));
 //Creating middleware
 app.use(express.json());
 //implementing cors
-var allowedOrigins = ['https://recipe-app-front-end.netlify.app/'];
-app.use(cors({
-  origin: function(origin, callback){
-    // allow requests with no origin 
-    // (like mobile apps or curl requests)
-    if(!origin) return callback(null, true);
-    if(allowedOrigins.indexOf(origin) === -1){
-      var msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  }
-}));
+app.use(cors());
 app.get('/',(request,response)=>{
     response.send('RecipeApp - Api');
 })
