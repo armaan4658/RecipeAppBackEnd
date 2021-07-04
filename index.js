@@ -7,8 +7,8 @@ import bcrypt from "bcrypt";
 const app = express();
 const PORT = process.env.PORT || 5000;
 //Data base url
-// const url = process.env.MONGODB_URI || "mongodb://localhost/RecipeData";
-const url =  "mongodb://localhost/recipeApp";
+const url = process.env.MONGODB_URI || "mongodb://localhost/RecipeData";
+// const url =  "mongodb://localhost/recipeApp";
 // const url = process.env.MONGODB_URI ;
 
 mongoose.connect(url,{useNewUrlParser:true});
