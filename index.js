@@ -33,7 +33,7 @@ app.use(cors({
   }
 }));
 app.get('/',(request,response)=>{
-    response.send('Welcome to postman');
+    response.send('RecipeApp - Api');
 })
 app.get('/recipes',async(request,response)=>{
     const q = request.query;
